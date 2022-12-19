@@ -28,31 +28,35 @@ function generatePassword()
     var specialChars = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
     
     var numbers = confirm("Would you like numbers");
-    var numberChars = [1,2,3,4,5,6,7,8,9,0];
+    var numberChars = ["1","2","3","4","5","6","7","8","9","0"];
 
     var characters;
     var characterSelections = [];
 
-    if (lower === true || upper === true || special === true || num === true) { //uses a lot of ors to generate the character selection
+    if (lowerCase === true || upperCase === true || special === true || numbers === true) { //uses a lot of ors to generate the character selection
         
-      if (lower === true) 
+      if (lowerCase === true) 
       {
         characterSelections += lowerCaseChars;
+        console.log('characterSelections = ', characterSelections);
       }
 
-      if (upper === true) 
+      if (upperCase === true) 
       {
         characterSelections += upperCaseChars;
+        console.log('characterSelections = ', characterSelections);
       }
 
       if (special === true) 
       {
         characterSelections += specialChars;
+        console.log('characterSelections = ', characterSelections);
       }
 
-      if (num === true) 
+      if (numbers === true) 
       {
         characterSelections += numberChars;
+        console.log('characterSelections = ', characterSelections);
       }
     
       var password = '';
@@ -62,9 +66,14 @@ function generatePassword()
       for (var i = 0; i < passowrdLength; i++)
       {
         // loops through all chosen types
-        
-        return password;
+        var index = Math.floor(Math.random() * characterSelections.length);
+        console.log("random character ", characterSelections[index]);
+        console.log("random index = ", index);
+        password += characterSelections[index];
+        console.log("password = ", password);
       }
+
+      return password;
     } // connected to if with a bunch of ors
     else
     {

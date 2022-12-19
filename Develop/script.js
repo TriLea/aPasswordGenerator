@@ -15,7 +15,7 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword()
 {
-  var length = window.prompt('Enter password length.');
+  var length = parseInt(window.prompt('Enter password length.'));
   if (length > 7 || length < 129)
   {
     var lowerCase = confirm("Would you like lowercase letters?");
@@ -37,25 +37,25 @@ function generatePassword()
         
       if (lowerCase === true) 
       {
-        characterSelections += lowerCaseChars;
+        characterSelections.concat(lowerCaseChars);
         console.log('characterSelections = ', characterSelections);
       }
 
       if (upperCase === true) 
       {
-        characterSelections += upperCaseChars;
+        characterSelections.concat(upperCaseChars);
         console.log('characterSelections = ', characterSelections);
       }
 
       if (special === true) 
       {
-        characterSelections += specialChars;
+        characterSelections.concat(specialChars);
         console.log('characterSelections = ', characterSelections);
       }
 
       if (numbers === true) 
       {
-        characterSelections += numberChars;
+        characterSelections.concat(numberChars);
         console.log('characterSelections = ', characterSelections);
       }
     

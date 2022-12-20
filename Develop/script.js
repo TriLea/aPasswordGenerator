@@ -37,25 +37,25 @@ function generatePassword()
         
       if (lowerCase === true) 
       {
-        characterSelections.concat(lowerCaseChars);
+        characterSelections = characterSelections.concat(lowerCaseChars);
         console.log('characterSelections = ', characterSelections);
       }
 
       if (upperCase === true) 
       {
-        characterSelections.concat(upperCaseChars);
+        characterSelections = characterSelections.concat(upperCaseChars);
         console.log('characterSelections = ', characterSelections);
       }
 
       if (special === true) 
       {
-        characterSelections.concat(specialChars);
+        characterSelections = characterSelections.concat(specialChars);
         console.log('characterSelections = ', characterSelections);
       }
 
       if (numbers === true) 
       {
-        characterSelections.concat(numberChars);
+        characterSelections = characterSelections.concat(numberChars);
         console.log('characterSelections = ', characterSelections);
       }
     
